@@ -44,31 +44,31 @@ pipeline {
             }
         }
 
-        stage('Upload Artifacts to Nexus'){
+        // stage('Upload Artifacts to Nexus'){
             
-            steps{
+        //     steps{
 
-                script{
+        //         script{
 
-                    nexusArtifactUploader artifacts: 
-                [
-                    [
-                    artifactId: 'springboot',
-                    classifier: '', 
-                    file: 'target/Thapar.jar', 
-                    type: 'jar'
-                    ]
-                ], 
-                    credentialsId: 'nexuscreds', 
-                    groupId: 'com.example', 
-                    nexusUrl: '52.194.188.17:8081', 
-                    nexusVersion: 'nexus3', 
-                    protocol: 'http', 
-                    repository: 'java-release', 
-                    version: '1.0.0'
-                }
-            }
-        }
+        //             nexusArtifactUploader artifacts: 
+        //         [
+        //             [
+        //             artifactId: 'springboot',
+        //             classifier: '', 
+        //             file: 'target/Thapar.jar', 
+        //             type: 'jar'
+        //             ]
+        //         ], 
+        //             credentialsId: 'nexuscreds', 
+        //             groupId: 'com.example', 
+        //             nexusUrl: '52.194.188.17:8081', 
+        //             nexusVersion: 'nexus3', 
+        //             protocol: 'http', 
+        //             repository: 'java-release', 
+        //             version: '1.0.0'
+        //         }
+        //     }
+        // }
 
         stage("Docker Image Build"){
 
